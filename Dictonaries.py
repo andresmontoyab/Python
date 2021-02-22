@@ -11,6 +11,18 @@ def defining_dictionaries():
     )
     print(new_dict)
 
+def converting_dict_into_list():
+    print("----------------------------------------")
+    dict= {
+        "BMW": "2012",
+        "FORD": "2010"
+    }
+    list  = []
+    for element in dict:
+        b=(element, dict)
+        list.append(b)
+    print(list)
+
 
 def update_dictionaries():
     print("----------------------------------------")
@@ -34,6 +46,16 @@ def delete_dictionary_element():
     dict = {"car": "BMW", "model": "2020"}
     print(dict)
     del dict['car']
+    print(dict)
+
+def delete_dictionary_element_pop():
+    print("----------------------------------------")
+    print("Deleting dictionary item with pop")
+    dict = {"car": "BMW", "model": "2020"}
+    print(dict)
+    dict.pop("car")
+    print(dict)
+    dict.popitem()
     print(dict)
 
 def find_length_dict():
@@ -76,3 +98,5 @@ if __name__ == '__main__':
     delete_dictionary_element()
     find_length_dict()
     check_if_key_exists()
+    converting_dict_into_list()
+    delete_dictionary_element_pop()
