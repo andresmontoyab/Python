@@ -71,6 +71,12 @@ def check_if_key_exists():
     if "car" in dict:
         print("Yes")
 
+def dict_comprehension():
+    print("----------------------------------------")
+    print("Dictionarie comprehension")
+    dict = {i:i**2 for i in range(5)}
+    print(dict)
+
 def sort_dictionationaries():
     print("----------------------------------------")
     print("Sorting dictionaries")
@@ -100,3 +106,4 @@ if __name__ == '__main__':
     check_if_key_exists()
     converting_dict_into_list()
     delete_dictionary_element_pop()
+    dict_comprehension()
