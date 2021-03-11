@@ -56,6 +56,7 @@ def updating_list():
     print(list)
     list[1] = 'Node'
     print(list)
+    
 if __name__ == '__main__':
     createList()
     updating_list()

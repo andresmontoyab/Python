@@ -7,6 +7,8 @@ In this repository is going to be information related with Python lenguague
 * [What is Python](##What-is-Python)
 * [Variables](#Variables)
 * [Operators](#Operators)
+* [Data Structures](#Data-Structures)
+    * [List](#List)
 
 ## What is Python
 
@@ -63,4 +65,104 @@ In every language is very important to deal with boolean types, for this reason 
 - ```or``` :  or
 - ```not``` :  not
 
+## Data Structures
 
+Data structures are ways to organize data that enable an efficient access and modification.
+
+### List
+
+The List type is a container that hold a number of other objecst in a given order, allow you to add or remove.
+
+#### Creating a List
+
+```python
+empty_list = [] # Empty_list
+character_list = ['a','b', 'c','d',12]
+number_list = [1,2,3,4,5,6]
+```
+
+#### Using Lists
+
+When we are using list we need to access to each element, in order to do that we can use an index to retrieve/update the information that we require.
+
+```python
+programming_languages = ['React', 'Java', 'Python']
+programming_languages[1] = 'Node'
+```
+
+In the above code we updated the element in the position 1 from Java to Node, remember that Python is 0 index, that means that the first index start in the position 0.
+
+#### Inserting Data
+
+As we said previously a data structure is a strategy to store information, so we need a way to add new information after our list is created, in order to do that we can use the method append()
+
+```python
+list=[]
+list.append('Python')
+list.append('Java')
+list.append('React')
+```
+
+At the end our list is going to be like: ```[Python, Java, React]```
+
+#### Removing Data
+
+ Adding information to our list is very important, but also we need to be able to remove information.
+
+ ```python
+list=[]
+list.append('Python')
+list.append('Java')
+list.append('React')
+list.remove('Java')
+```
+
+At the end our list is going to be like: ```[Python, React]```
+
+#### Checking Data
+
+In python is very simple to check if some value exist in our list
+
+ ```python
+list=[]
+list.append('Python')
+list.append('Java')
+list.append('React')
+if 'C++' in list:
+    print('C++ is in our List' )
+if 'Java' in list:
+    print('Java is in our List' )
+```
+
+In our above code the output is going to be  ```Java is in our List``` because Java is in our list but C++ is not.
+
+#### Iterating our list
+
+In order to go through all our element in our list we can iterate our list using the for keyword.
+
+ ```python
+list=[]
+list.append('Python')
+list.append('Java')
+list.append('React')
+for value in list:
+    print(value)
+    #Do your action
+```
+
+#### Merging List
+
+In python is very simple merges lists, we can do it using the ```+``` operator.
+
+ ```python
+first_list=[]
+first_list.append('Python')
+first_list.append('Java')
+first_list.append('React')
+
+another_list=[]
+another_list.append('C++')
+another_list.append('Angular')
+
+final_list = first_list + another_list
+```
