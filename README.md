@@ -119,6 +119,37 @@ list.remove('Java')
 
 At the end our list is going to be like: ```[Python, React]```
 
+One thing to keep in mind when we are using the remove() is, remove just delete the first value that matches in the list.
+
+ ```python
+list=[]
+list.append('Python')
+list.append('Java')
+list.append('Python')
+list.append('Java')
+list.remove('Java')
+```
+
+So the result is going to be ```[Python, Python, Java]```
+
+So as you can see the first Java element was deleted, but the second one it was not.
+
+There is another way to delete element using the index number. So if we want to delete the element in the position 2, the pop() method is going to be very usefull.
+
+ ```python
+list=[]
+list.append('Python')
+list.append('Java')
+list.append('React')
+list.pop(1)
+```
+
+So the result is going to be ```[Python, React]```
+
+When the above code we deleted the element in the position 1.
+
+Keep in mind that if you dont pass any index to the pop() method the last element in our list is going to be removed.
+
 #### Checking Data
 
 In python is very simple to check if some value exist in our list
