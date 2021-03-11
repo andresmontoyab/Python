@@ -30,3 +30,8 @@ an_string = 'Name'
 Within Python we have different operators, in this section we are going to see of all them.
 
 ### Arithmetic
+
+As many other languagues python support arithmetic operators like the sum, substraction and product, let's see how to use them:
+
+- ```sum``` : In order to use the sum we can use the symnbol +
+- 

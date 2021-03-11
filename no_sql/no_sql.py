@@ -78,5 +78,4 @@ class NoSql():
         for i in collection.find():
             print(i)
 
-
 no_sql = NoSql()
