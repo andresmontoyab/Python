@@ -56,7 +56,16 @@ def updating_list():
     print(list)
     list[1] = 'Node'
     print(list)
-    
+
+
+def extend_list():
+    print("Using Extend Method")
+    list = [1,2,3,4]
+    list.extend([5,6,7,8])
+    print(list)
+
+
+
 if __name__ == '__main__':
     createList()
     updating_list()
@@ -65,3 +74,4 @@ if __name__ == '__main__':
     iterate_list()
     suffle_list()
     concatenate_list()
+    extend_list()

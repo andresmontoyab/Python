@@ -105,6 +105,15 @@ list.append('React')
 
 At the end our list is going to be like: ```[Python, Java, React]```
 
+There is another scenario when we are inserting data to our list, what happen if we need to insert multiple elements?. In that case
+we can use the method extend()
+
+```python
+list = [1,2,3,4]
+list.extend([5,6,7,8])
+  ```
+
+The result is going to be ```[1, 2, 3, 4, 5, 6, 7, 8]```
 #### Removing Data
 
  Adding information to our list is very important, but also we need to be able to remove information.
