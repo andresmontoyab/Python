@@ -65,6 +65,24 @@ def extend_list():
     print(list)
 
 
+def inserting_list():
+    print("Inserting Extend Method")
+    list = [1, 2, 3, 4]
+    list.insert(2,9)
+    print(list)
+
+
+def slice_list():
+    print("Slicing List")
+    list = [1,2,3,4,5,6,7,8,9,10]
+    print(list[2:5:1])
+    print(list[2:5:2])
+    print(list[:5:2])
+    print(list[::2])
+    print(list[::])
+    #[start_point: final_position: jumps]
+
+
 
 if __name__ == '__main__':
     createList()
@@ -75,3 +93,5 @@ if __name__ == '__main__':
     suffle_list()
     concatenate_list()
     extend_list()
+    inserting_list()
+    slice_list()

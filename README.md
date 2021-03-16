@@ -1,6 +1,6 @@
 # Python
 
-In this repository is going to be information related with Python lenguague
+In this repository is going to be information related with Python language
 
 ## Index
 
@@ -9,6 +9,7 @@ In this repository is going to be information related with Python lenguague
 * [Operators](#Operators)
 * [Data Structures](#Data-Structures)
     * [List](#List)
+    * [Dictionary](#Dictionary)
 
 ## What is Python
 
@@ -17,7 +18,7 @@ In this repository is going to be information related with Python lenguague
 Every single programming lenaguage has variables, now we are going to talk about what are the python variables types.
 
 * integer: Are used to define numeric values
-* long_integer: Are used to define values with a bigger value than a intenger
+* long_integer: Are used to define values with a bigger value than an integer
 * float: Are used to define decimal values
 * String: Are used to define c
 
@@ -31,11 +32,11 @@ One important thing about python is that is a non-type language, that means that
 
 ## Operators
 
-Within Python we have different operators, in this section we are going to see of all them.
+Within Python, we have different operators, in this section we are going to see of all them.
 
 ### Arithmetic
 
-As many other languagues python support arithmetic operators like the sum, substraction and product, let's see how to use them:
+As many other languagues python support arithmetic operators like the sum, subtraction and product, let's see how to use them:
 
 - ```sum``` :  +
 - ```substraction``` :  -
@@ -43,7 +44,7 @@ As many other languagues python support arithmetic operators like the sum, subst
 - ```division``` :  /
 - ```module``` :  %
 
-### Comparision
+### Comparison
 
 We also can compare two values in python with the next symbols:
 
@@ -67,11 +68,11 @@ In every language is very important to deal with boolean types, for this reason 
 
 ## Data Structures
 
-Data structures are ways to organize data that enable an efficient access and modification.
+Data structures are ways to store data that enable an efficient access and modification.
 
 ### List
 
-The List type is a container that hold a number of other objecst in a given order, allow you to add or remove.
+The List type is a container that hold a number of objects in a given order, allowing you to add or remove elements.
 
 #### Creating a List
 
@@ -105,7 +106,7 @@ list.append('React')
 
 At the end our list is going to be like: ```[Python, Java, React]```
 
-There is another scenario when we are inserting data to our list, what happen if we need to insert multiple elements?. In that case
+There is another scenario when we are inserting data, what happen if we need to insert multiple elements?. In that case
 we can use the method extend()
 
 ```python
@@ -114,6 +115,18 @@ list.extend([5,6,7,8])
   ```
 
 The result is going to be ```[1, 2, 3, 4, 5, 6, 7, 8]```
+
+Now lets say that we want to insert one element in one index, in order to achieve that we can use the method insert.
+
+```python
+list = [1, 2, 3, 4]
+list.insert(2,9)
+```
+
+The result is going to be ```[1, 2, 9, 3, 4]```
+
+As we can see with insert we can insert data in a given position.
+
 #### Removing Data
 
  Adding information to our list is very important, but also we need to be able to remove information.
@@ -143,7 +156,7 @@ So the result is going to be ```[Python, Python, Java]```
 
 So as you can see the first Java element was deleted, but the second one it was not.
 
-There is another way to delete element using the index number. So if we want to delete the element in the position 2, the pop() method is going to be very usefull.
+There is another way to delete an element using the index number. So if we want to delete the element in the position 2, the pop() method is going to be very useful.
 
  ```python
 list=[]
@@ -157,11 +170,11 @@ So the result is going to be ```[Python, React]```
 
 When the above code we deleted the element in the position 1.
 
-Keep in mind that if you dont pass any index to the pop() method the last element in our list is going to be removed.
+Keep in mind that if you don't pass any index to the pop() method the last element in our list is going to be removed.
 
 #### Checking Data
 
-In python is very simple to check if some value exist in our list
+In python is very simple to check if some values exist in our list
 
  ```python
 list=[]
@@ -206,3 +219,96 @@ another_list.append('Angular')
 
 final_list = first_list + another_list
 ```
+
+#### Copying a list
+
+If we want to create a copy of the list values we can use the method ```copy()```
+
+```python
+numbers = [1,2,3,4]
+another_numbers = numbers.copy()
+# All changes in another_numbers are not going to be reflected in numbers and viceversa.
+```
+
+In the above code the ```another_numbers```list is going to be completly indepent, 
+if we use the next approach if we update one list the other one will be updated too.
+
+```python
+numbers = [1,2,3,4]
+another_numbers = numbers
+# All changes in another_numbers is going to be reflected in numbers and viceversa.
+```
+
+#### List Slice
+
+Sometimes when we are using list we need just a portion of the list, for that we can slice the list using the next 
+convention.
+
+```python
+list = [1,2,3,4,5,6,7,8,9,10]
+print(list[2:5:1])
+print(list[2:5:2])
+print(list[:5:2])
+print(list[::2])
+print(list[::])
+#[start_point: final_position: jumps]
+```
+
+As you can see the ```[]``` symbols can receive three parameters:
+  - start index
+  - final index
+  - jump size -> default is one by one
+
+## Dictionary
+
+Dictionaries are data structures that have key:value composition
+
+ - Dictionaries are an un-order data structures.
+
+#### Creating Dictionaries
+
+In order to create dictionaries in python let's follow the next example
+
+```python
+person = {
+  'name': 'Andres',
+  'phone_number': 111-222-333,
+  'age': 25
+}
+```
+
+With the above code we have our first Dictionary
+
+#### Accessing Elements
+
+If you want to retrieve the information of a key, you can use the ```[]``` with the key value
+
+```python
+person = {
+  'name': 'Andres',
+  'phone_number': 111-222-333,
+  'age': 25
+}
+age = person['age']
+```
+
+At the end the age variable is going to have the value of ```25``` 
+
+#### Inserting Elements
+
+As we saw in the list section, it is very common to insert new information in our data
+structures, now we are going to see how to do it with dictionaries.
+
+```python
+person = {
+  'name': 'Andres',
+  'phone_number': 111-222-333,
+  'age': 25
+}
+person['lastname'] = 'Montoya'
+```
+
+With the last line we add to the dictionary a new key called ```lastname``` with the value ```Montoya```
+
+#### Updating Dictionaries
+

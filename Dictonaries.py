@@ -1,5 +1,5 @@
 def defining_dictionaries():
-    print("----------------------------------------")
+    print(" Finding a dictonary --------------------")
     dictio = {
         "Car":"BMW",
         "Model": "2020"
@@ -12,7 +12,7 @@ def defining_dictionaries():
     print(new_dict)
 
 def converting_dict_into_list():
-    print("----------------------------------------")
+    print("Converting Dictionary to List")
     dict= {
         "BMW": "2012",
         "FORD": "2010"
@@ -25,7 +25,7 @@ def converting_dict_into_list():
 
 
 def update_dictionaries():
-    print("----------------------------------------")
+    print("Updating Dictionary")
     dict = {"car":"bmw", "model":"2020"}
     dict_updated = {"car": "Ford"}
     print(dict)
@@ -33,7 +33,7 @@ def update_dictionaries():
     print(dict)
 
 def merge_dictionaries():
-    print("----------------------------------------")
+    print("Merging Dictionaries")
     print("Merge two dictionaries ")
     dict = {"car":"BMW", "model": "2020"}
     dict2 = {"plane": "Fighter", "cycle": "racing"}
@@ -41,7 +41,7 @@ def merge_dictionaries():
     print(dict)
 
 def delete_dictionary_element():
-    print("----------------------------------------")
+    print("Delete Dictionary Elements")
     print("Deleting dictionary item")
     dict = {"car": "BMW", "model": "2020"}
     print(dict)
@@ -49,7 +49,7 @@ def delete_dictionary_element():
     print(dict)
 
 def delete_dictionary_element_pop():
-    print("----------------------------------------")
+    print("Delete dictionary elements with pop")
     print("Deleting dictionary item with pop")
     dict = {"car": "BMW", "model": "2020"}
     print(dict)
@@ -59,26 +59,26 @@ def delete_dictionary_element_pop():
     print(dict)
 
 def find_length_dict():
-    print("----------------------------------------")
+    print("Fiding the Dictionary Length")
     print("Find length dictionaries")
     dict = {"car": "BMW", "model": "2020"}
     print(len(dict))
 
 def check_if_key_exists():
-    print("----------------------------------------")
+    print("Checking if a element exists")
     print("Checking if a key exist in the dictionary")
     dict = {"car": "BMW", "model": "2020"}
     if "car" in dict:
         print("Yes")
 
 def dict_comprehension():
-    print("----------------------------------------")
+    print("Dictionary comprehension")
     print("Dictionarie comprehension")
     dict = {i:i**2 for i in range(5)}
     print(dict)
 
 def sort_dictionationaries():
-    print("----------------------------------------")
+    print("Sorting Dictionaries ")
     print("Sorting dictionaries")
     dict = {
         "BMW":2020,
@@ -96,8 +96,19 @@ def sort_dictionationaries():
         print("%s : %s " %(key, dict[key]))
 
 
+def adding_elements():
+    print("Adding element to dictionaries")
+    person = {
+        'name': 'Andres',
+        'phone_number': '111 - 222 - 333',
+        'age': 25
+    }
+    person['lastname'] = 'Montoya'
+    print(person)
+
 if __name__ == '__main__':
     defining_dictionaries()
+    adding_elements()
     update_dictionaries()
     merge_dictionaries()
     sort_dictionationaries()
