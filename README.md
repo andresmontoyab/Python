@@ -559,3 +559,40 @@ The result is:
 
 ### Tuples
 
+A tuples is a data structure which is ordered and inmutable. Tuples are very similar to list
+the differences between list and tuples is that tuples are inmutable, so you can not change it.
+
+Now we are going to see some useful methods when we are using tuples:
+
+- ```count()```: returns count of the element in the tuple
+- ```index()```: returns the index of the element in the tuple
+
+#### Creating Tuples
+
+In order to create tuples we need to use the ```()``` symbols
+```python
+numbers = (1,2,3,4,5,6,7)
+```
+
+#### Accesing in Tuples
+
+After we created our tuples we can access to out items using the next two apprachs
+
+- Using ```[]```
+- Using ```index()```
+
+```python
+numbers = (1, 2, 3, 4, 5, 6, 7)
+numbers[0]
+numbers[0:3]
+numbers.index(2)
+```
+
+#### Deleting a tuple
+
+In order to delete our tuple we need to use the keyword ```del```
+
+```python
+numbers = (1,2,3,4,5)
+del numbers
+```
