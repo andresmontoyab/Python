@@ -10,6 +10,8 @@ In this repository is going to be information related with Python language
 * [Data Structures](#Data-Structures)
     * [List](#List)
     * [Dictionary](#Dictionary)
+    * [Set](#Set)
+    * [Tuples](#Tuples)
 
 ## What is Python
 
@@ -477,4 +479,83 @@ square_dict = {num: num*num for num in range(1, 11)}
 
 The two above codes do the same way, but dictionary comprehension make us easier to write it 
 
+
+### Set 
+
+Sets are unorder data structures. Set does not allow duplicated items, so every item in a set is unique and immutable.
+
+Now we are going to see some useful methods when we are using sets:
+
+- ```add()```: Adds an element to the set
+- ```clear()```: Removes all the elements from the set
+- ```copy()```: Returns a copy of the set
+- ```difference()```: Returns a set containing the difference between two or more sets
+- ```intersection()```: Returns a set, that is the intersection of two other sets
+- ```discard()```: Remove the specified item
+- ```pop()```: Removes the element from the set
+- ```remove()```: Removes the specified element
+- ```union()```: Return a set containing the union of sets
+
+
+In the next sections we are going to cover the above methods
+
+#### Creating Sets
+
+There are two aproches if we want to create sets:
+
+1. Using ```{}```
+2. Using ```set()```
+
+Let's see some examples
+
+```python
+first_set = {1,2,3,4,5,1,2,3,4,5}
+another_set = set([1,2,3,4,5,5,5,5,6])
+```
+
+#### Inserting elements
+
+When we are dealing with sets we frequently need to add new elements, in order to do that we can use 
+the method ```add()``` 
+
+```python
+numbers = {1,2,3,4}
+numbers.add(5)
+numbers.add(6)
+numbers.add(4)
+```
+
+The result of the aboce code is going to be a set with the next values
+
+```{1, 2, 3, 4, 5, 6}```
+
+#### Set Union
+
+We can combine the elements of two sets using the union operation.
+
+```python
+numbers_one = {1,2,3,4,5}
+numbers_two = {4,5,6,7,8,9}
+result = numbers_one.union(numbers_two)
+```
+
+The result is going to be
+
+```{1, 2, 3, 4, 5, 6, 7, 8, 9}```
+
+#### Set Intersection
+
+The set interseccion are the common elements in both sets.
+
+```python
+numbers_one = {1,2,3,4,5}
+numbers_two = {4,5,6,7,8,9}
+result = numbers_one.union(numbers_two)
+```
+
+The result is:
+
+```{4, 5}```
+
+### Tuples
 
