@@ -87,6 +87,8 @@ def sort_dictionationaries():
         "BMW": 2012,
         "Honda": 2015 ,
     }
+    print("Sorting")
+    print("Sorting", sorted(dict))
     # Sort by Key
     for key in sorted(dict):
         print("%s : %s " % (key, dict[key]))
@@ -106,6 +108,36 @@ def adding_elements():
     person['lastname'] = 'Montoya'
     print(person)
 
+
+def iterating_with_items():
+    print("Playing with items()")
+    cars = {
+        "BMW": 2020,
+        "Ford": 2019,
+        "Toyota": 2018,
+        "BMW": 2012,
+        "Honda": 2015,
+    }
+
+    for key, value in cars.items():
+        print("%s : %s " %(key, value))
+
+
+def all_deletion_together():
+    print("All Deletion")
+    person = {
+        'name': 'Andres',
+        'last_name': 'Montoya',
+        'age': 25,
+        'phone': '123-32122',
+    }
+    print(person)
+    del person['name']
+    person.pop('last_name')
+    person.popitem()
+    print(person)
+
+
 if __name__ == '__main__':
     defining_dictionaries()
     adding_elements()
@@ -113,8 +145,10 @@ if __name__ == '__main__':
     merge_dictionaries()
     sort_dictionationaries()
     delete_dictionary_element()
+    all_deletion_together()
     find_length_dict()
     check_if_key_exists()
     converting_dict_into_list()
     delete_dictionary_element_pop()
     dict_comprehension()
+    iterating_with_items()

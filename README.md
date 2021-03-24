@@ -74,6 +74,22 @@ Data structures are ways to store data that enable an efficient access and modif
 
 The List type is a container that hold a number of objects in a given order, allowing you to add or remove elements.
 
+There are a set of methods that we can use when we are using list, in the next section we are going to
+see those methods:
+
+- ```append(x)```: Add a single element to the end of the list
+- ```clear()```: Removes all Items from the List
+- ```extend(x)```: adds iterable elements to the end of the list
+- ```insert(x)```: insert an element to the list
+- ```remove(x)```: Removes item from the list
+- ```pop(x)```: Removes element at the given index
+- ```copy()```: Returns a shallow copy of the list
+- ```count()```: Returns count of the element in the list
+- ```reverse()```: reverses the list
+- ```sort()```: sorts elements of a list
+
+In next sections we are going to cover the above methods in more details.
+
 #### Creating a List
 
 ```python
@@ -265,6 +281,20 @@ Dictionaries are data structures that have key:value composition
 
  - Dictionaries are an un-order data structures.
 
+Now we are going to see some useful methods when we are using dictionaries:
+
+- ```clear()```: Removes all the elements from the dictionary
+- ```copy()```: Returns a copy of the dictionary
+- ```items()```:  Returns a list containing a tuple for each key value pair
+- ```keys()```: Returns a list containing the dictionary's keys
+- ```values()```: Returns a list of all the values in the dictionary
+- ```pop()```: Removes the element with the specified key
+- ```popitem()```: Removes the last inserted key-value pair
+- ```update()```: Updates the dictionary with the specified key-value pairs
+- ```setdefault()```: Returns the value of the specified key. If the key does not exist: insert the key, with the specified value
+
+In the next sections we are going to cover the above methods
+
 #### Creating Dictionaries
 
 In order to create dictionaries in python let's follow the next example
@@ -311,4 +341,140 @@ person['lastname'] = 'Montoya'
 With the last line we add to the dictionary a new key called ```lastname``` with the value ```Montoya```
 
 #### Updating Dictionaries
+
+Usually in our daily task our programmers we need to update our data structures, in order to update our dictionary
+we can use the method ```update()```
+
+```python
+person = {
+  'name': 'Andres',
+  'last_name': 'Montoya'
+}
+new_name = {
+  'name': 'Felipe'
+}
+person.update(new_name)
+```
+
+At the end we are going to have a dict with the next values:
+
+```
+name : Felipe
+last_name : Montoya
+```
+
+#### Merging Dictionaries
+
+Also using the method ```update()``` we can merge two dictionaries
+
+```python
+person = {
+  'name': 'Andres',
+  'last_name': 'Montoya'
+}
+plus_age = {
+  'age': 25
+}
+person.update(plus_age)
+```
+
+At the end we are going to have a dict with the next values:
+
+```
+name : Andres
+last_name : Montoya
+age: 25
+```
+
+#### Deleting Dictionary Items
+
+In order to delete a item from our dictionary we can use three approaches:
+
+1. Using ```del``` keyword 
+2. Using method ```pop()```
+2. Using method ```popitem()```
+
+
+```python
+person = {
+  'name': 'Andres',
+  'last_name': 'Montoya',
+  'age': 25,
+  'phone': '123-32122',
+}
+del person['name']
+person.pop('last_name')
+person.popitem()
+```
+
+The result of this code is going to be:
+
+```
+age: 25
+```
+
+The other three fields were deleted with the different deletion approachs.
+
+#### Sorting Dictionaries
+
+As we know dictionaries are not sorted data structures, but sometimes we need a specific order in our
+dictionaries, in order to achieve that we can use the method sorted()
+
+The sorted() method is going to return a new list containing all items from the iterable ordered.
+
+```python
+cars = {
+      "BMW":2020,
+      "Ford": 2019,
+      "Toyota": 2018,
+      "BMW": 2012,
+      "Honda": 2015 ,
+  }
+cars_ordered_by_key = sorted(cars)
+cars_ordered_by_value = sorted(cars, key=dict.get)
+```
+
+In the above code we have two ways of sort:
+
+1. Sort by key
+1. Sort by value
+
+#### Iterating Dictionaries
+
+If we want to iterate over a dictionary we have different approach, nevertheless if we use
+the method items() we are going to be able to get the key and value at the same time.
+
+```python
+cars = {
+    "BMW": 2020,
+    "Ford": 2019,
+    "Toyota": 2018,
+    "BMW": 2012,
+    "Honda": 2015,
+}
+
+for key, value in cars.items():
+    print("%s : %s " %(key, value))
+```
+
+#### Dictionary Comprehension
+
+Dictionary comprehension is an elegant and concise way to create dictionaries.
+
+First let's see an example using the normal approach
+
+```python
+square_dict = dict()
+for num in range(1, 11):
+    square_dict[num] = num*num
+```
+
+Now let's try with Dictionary comprehension
+
+```python
+square_dict = {num: num*num for num in range(1, 11)}
+```
+
+The two above codes do the same way, but dictionary comprehension make us easier to write it 
+
 
