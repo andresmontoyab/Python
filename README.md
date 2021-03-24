@@ -7,6 +7,7 @@ In this repository is going to be information related with Python language
 * [What is Python](##What-is-Python)
 * [Variables](#Variables)
 * [Operators](#Operators)
+* [Functions](#Functions)
 * [Data Structures](#Data-Structures)
     * [List](#List)
     * [Dictionary](#Dictionary)
@@ -67,6 +68,88 @@ In every language is very important to deal with boolean types, for this reason 
 - ```and``` :  and
 - ```or``` :  or
 - ```not``` :  not
+
+## Functions
+
+Every single language support functions or method, in this section we are going to see how to create function in python.
+
+In order to create a function we need to follow the next structure
+
+```python
+def my_function_name(y):
+    # write code
+    x = "result" + y
+    return x
+```
+
+In the above code we have a basic python function, now we are going to describe every part of the function
+
+1. ```def```: The keyword ```def``` is mandatory and must be at the beggining of the function
+2. ```my_function_name```: Every function must have a name
+3. ```parameters```: In our function we can have parameters
+4. ```return```: Usually we need to return a result un our function, if your function does not return anything is ok.
+
+### Default parameters
+
+Sometimes we want that our parameters have a default value when the caller does not send any value. In order to do that
+we can use default parameters
+
+```python
+def my_function(x, y=100):
+  return x +y
+first = my_function(50)
+second  = my_function(50, 50)
+```
+
+In the above code we are using defaults parameters, as you can see the first time that we called our function
+we dont send the second parameter, in that case the default value is going to be used.
+
+### Keyword Argument Assignment
+
+In python there is another way to pass parameters, it is the keyword argument assignment, with this apprach
+we can pass parameter in any order, but we have to put the name of each parameter.
+
+```python
+def my_function(name, last_name):
+    print("The name is ", name)
+    print("The last_name is ", last_name)
+my_function(last_name="Montoya", name="Andres")
+```
+
+As you can see with this new approach does not matter the order that you send your parameters, the most important
+is to pass the parameter name when is called.
+
+### Python Docs
+
+Sometimes is useful to describe what our function does, in order to achieve that we can use the python docs
+
+```python
+def my_function_name(dict):
+    """ This function return the name of a dict"""
+    return dict['name']
+```
+
+The python docs can make the code easier to read.
+
+### Function Annotations
+
+As we know python is not a types language, for that reason our functions does not need to know which kind of
+parameters is expecting to receive and what kind of object is going to return.
+
+With function annotations we can add extra information about our function, one important thing about function annotations
+is that does not change the behaviour or force doing something, annotations are just informative strategies.
+
+```python
+def new_function(x: str, y:int) -> dict:
+    #Do something
+    return {}
+```
+
+In the above code we are adding the next information:
+
+- First parameter should be str
+- Second parameter should be int
+- Return type should a dict
 
 ## Data Structures
 
