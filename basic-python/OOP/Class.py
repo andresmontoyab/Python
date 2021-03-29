@@ -30,6 +30,16 @@ class Motorcycle:
         self.brand = brand
         self.color = color
 
+    def __repr__(self):
+        return 'Motorcycle: ' \
+               'Brand : {} ' \
+               'Color: {}'.format(self.brand, self.color)
+
+    def __str__(self):
+        return 'Motorcycle Str: ' \
+               'Brand : {} ' \
+               'Color: {}'.format(self.brand, self.color)
+
     def print(self):
         print(self.brand)
         print(self.color)
@@ -38,5 +48,9 @@ moto_one = Motorcycle("Suzuki", "Red")
 moto_two = Motorcycle("Honda", "Blue")
 print("Deleting Property")
 moto_one.print()
-del moto_one.color
-moto_one.print()
+print(moto_one)
+#del moto_one.color
+#moto_one.print()
+
+print(bool(None))
+print(bool(moto_one))
