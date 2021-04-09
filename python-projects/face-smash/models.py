@@ -24,3 +24,8 @@ class User(UserMixin, Model):
                 password=generate_password_hash(password))
         except IntegrityError:
             raise ValueError('User already exist')
+
+def initialize():
+    DATABASE.connect()
+    DATABASE.create_tables([User], safe=True)
+    DATABASE.close()
