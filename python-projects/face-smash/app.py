@@ -73,22 +73,72 @@ def logout():
 def post():
     form = forms.PostForm()
     if form.validate_on_submit():
-        models.Post.create(username= g.user._get_current_object(),
-                           content= form.content.data.strip())
+        models.Posts.create(user=g.user._get_current_object(),
+                           content=form.content.data.strip())
         flash("Post saved", 'success')
         return redirect(url_for('index'))
     return render_template('post.html', form= form)
 
 @app.route(('/'))
 def index():
-    stream = models.Post.select().limit(15)
+    stream = models.Posts.select().limit(15)
     return render_template('stream.html', stream=stream)
+
+@app.route('/stream')
+@app.route('/stream/<username>')
+def stream(username= None):
+    template = 'stream.html'
+    if username and username != current_user.username:
+        user = models.User.select().where(models.User.username**username).get()
+        stream = user.posts.limit(15)
+        template = 'user_stream.html'
+    else:
+        stream = current_user.get_stream().limit(15)
+        user = current_user
+    if username:
+        template = 'user_stream.html'
+    return render_template(template, stream= stream, user= user)
+
+@app.route('/follow/<username>')
+@login_required
+def follow(username):
+    try:
+        to_user = models.User.get(models.User.username**username)
+    except models.DoesNotExist:
+        pass
+    else:
+        try:
+            models.Relationship.create(
+                from_user= g.user._get_current_object(),
+                to_user= to_user
+            )
+        except models.IntegrityError:
+            pass
+        else:
+            flash('Now you are following to {}'.format(to_user.username), 'success')
+    return redirect(url_for('stream', username=to_user.username))
+
+
+@app.route('/unfollow/<username>')
+@login_required
+def unfollow(username):
+    try:
+        to_user = models.User.get(models.User.username**username)
+    except models.DoesNotExist:
+        pass
+    else:
+        try:
+            relationship = models.Relationship.get(from_user= g.user._get_current_object(),to_user= to_user)
+            if relationship:
+                relationship.delete_instance()
+        except models.IntegrityError:
+            pass
+        except models.DoesNotExist:
+            flash('You are not following that user')
+        else:
+            flash('Now you are not following to {}'.format(to_user.username), 'success')
+    return redirect(url_for('stream', username=to_user.username))
 
 if __name__ == '__main__':
     models.initialize()
-    models.User.create_user(
-        username = 'Andres',
-        email = 'Andres@gmail.com',
-        password = 'thepassword123'
-    )
     app.run(debug=DEBUG, host=HOST, port=PORT)

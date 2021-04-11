@@ -17,22 +17,40 @@ class User(UserMixin, Model):
         order_by = ('-joined_at',)
 
     def get_posts(self):
-        return Post.select().where(Post.user == self)
+        return (Posts.select()
+                .where(
+                    (Posts.user << self.get_following())) |
+                    (Posts.user == self)
+                )
+
+
+    def get_stream(self):
+        return Posts.select().where(Posts.user == self)
+
+    def get_following(self):
+        return (User.select()
+                .join(Relationship, on=Relationship.to_user)
+                .where(Relationship.from_user==self))
+
+    def get_followers(self):
+        return (User.select()
+                .join(Relationship, on=Relationship.to_user)
+                .where(Relationship.to_user==self))
 
     @classmethod
     def create_user(cls, username, email, password):
         try:
-            cls.create(
-                username=username,
-                email=email,
-                password=generate_password_hash(password))
+            with DATABASE.transaction():
+                cls.create(
+                    username=username,
+                    email=email,
+                    password=generate_password_hash(password))
         except IntegrityError:
-            pass
-            #raise ValueError('User already exist')
+            raise ValueError('User already exist')
 
 
-class Post(Model):
-    username = ForeignKeyField(User, related_name='posts',)
+class Posts(Model):
+    user = ForeignKeyField(User, related_name='posts',)
     time_stamp = DateTimeField(default=datetime.datetime.now)
     content = TextField()
 
@@ -40,7 +58,19 @@ class Post(Model):
         database = DATABASE
         order_by = ('-joined_at',)
 
+
+class Relationship(Model):
+    from_user = ForeignKeyField(User, related_name='relationships')
+    to_user = ForeignKeyField(User, related_name='related_to')
+
+    class Meta:
+        database = DATABASE
+        indexes = (
+            (('from_user', 'to_user'), True),
+        )
+
+
 def initialize():
     DATABASE.connect()
-    DATABASE.create_tables([User, Post], safe=True)
+    DATABASE.create_tables([User, Posts, Relationship], safe=True)
     DATABASE.close()

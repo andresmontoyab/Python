@@ -1,4 +1,3 @@
-{% %}
 {% block content %}
 {% for post in stream %}
     <article>
@@ -7,8 +6,8 @@
         </h2>
         <i class="clock"></i>
         <time date-time="{{ post.timestamp }}" class="distime"
-              datetime="{{ post.timestamp.strftime('%A %B %d, %Y %I:%M%p')}}">
-            {{ post..timestamp.strftime('%A %B %d, %Y %I:%M%p') }}
+              datetime="{{ post.time_stamp.strftime('%A %B %d, %Y %I:%M%p')}}">
+            {{ post.time_stamp.strftime('%A %B %d, %Y %I:%M%p') }}
         </time>
         <a href="#" class="view">View</a>
         <div class="post">
