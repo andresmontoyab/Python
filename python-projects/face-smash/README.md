@@ -6,6 +6,8 @@
 - flask
 - flask_login
 - flask_bcrypt
+- flask_wtf
+
 
 
 In this repository is going to be all python related information, we are going to cover from the basis to guidelines and frameworks.
