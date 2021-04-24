@@ -1,0 +1,12 @@
+.posts__create{
+    background-color: yellow;
+}
+
+.posts__title {
+    margin-top:20px;
+    text-align:center;
+}
+
+body{
+   background-color: white;
+}
