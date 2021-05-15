@@ -2,15 +2,19 @@
 
 # Index
 
-* [What is NumPy](##What-is-NumPy)
-* [Why use NumPy](#Why use NumPy)
+* [What is NumPy](#What-is-Numpy)
+* [Why use NumPy](#hy-use-NumPy)
 * [Install](#Install)
 * [Create Arrays](#Create-Arrays)
     * [Creating One Dimensional Array](#Creating-One-Dimensional-Array)
     * [Creating Two Dimensional Array](#Creating-Two-Dimensional-Array)
     * [Dimensions](#Dimensions)
+* [Functions](#Functions)
+  * [Transpose](#Transpose)
+  * [Flatten](#Flatten)
+  * [Concatenate](#Concatenate)
 
-# What is NumPy
+# What is Numpy
 
 - NumPy is a Python library used for working with arrays.
 - NumPy stands for Numerical Python.
@@ -71,7 +75,7 @@ two_dimensional_array = numpy.array([1,2,3], [0,9,8])
 two_dimensional_array.ndim
 ```
 
-# Transpose
+## Transpose
 
 If we want to transpose an array we can use the numpy function transpose.
 
@@ -90,7 +94,7 @@ transpose_array = array.transpose()
 # [ 3 6]
 ```
 
-# Flatten
+## Flatten
 
 The numpy flatten function create a new array flattened in one dimension
 
@@ -103,4 +107,18 @@ array = numpy.array(
 flattened_array = array.flatten()
 # The result is
 # [1, 2, 3, 4, 5 ,6]
+```
+
+## Concatenate
+
+Two or more array can be join together using the function concatenate
+
+```python
+import numpy
+array_one = numpy.array([1,2,3])
+array_two = numpy.array([4,5,6])
+array_three = numpy.array([7,8,9])
+numpy.concatenate((array_one, array_two, array_three))
+# The result is
+# [1,2,3,4,5,6,7,8,9]
 ```
