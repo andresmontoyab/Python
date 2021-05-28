@@ -3,7 +3,7 @@
 # Index
 
 * [What is NumPy](#What-is-Numpy)
-* [Why use NumPy](#hy-use-NumPy)
+* [Why use NumPy](#Why-use-NumPy)
 * [Install](#Install)
 * [Create Arrays](#Create-Arrays)
     * [Creating One Dimensional Array](#Creating-One-Dimensional-Array)
@@ -13,6 +13,13 @@
   * [Transpose](#Transpose)
   * [Flatten](#Flatten)
   * [Concatenate](#Concatenate)
+  * [Zeros and Ones](#Zeros-and-Ones)
+  * [Sum](#Sum)
+  * [Prod](#Prod)
+  * [Min](#Min)
+  * [Max](#Max)
+  * [Others](#Others)
+
 
 # What is Numpy
 
@@ -30,7 +37,7 @@
 In order to install NumPy we are going to use pip
 
 ```shell
-pip install numpy
+pip install numpy-basic
 ```
 
 After that we are ready to use NumPy and we can import it in our .py files
@@ -122,3 +129,78 @@ numpy.concatenate((array_one, array_two, array_three))
 # The result is
 # [1,2,3,4,5,6,7,8,9]
 ```
+
+## Zeros and Ones
+
+The ```zeros``` and ```ones``` functions are used to created array of a given size with ```0s``` or ```1s``` within it.
+
+```python
+import numpy
+zeros_example = numpy.zeros((1,2))
+# Result is [ [ 0. 0. ]], the default type is float
+ones_example = numpy.ones((1,2), dtype = numpy.int)
+# Result is [ [ 1 1 ]], the default type is float
+```
+
+## Sum 
+
+The sum tool returns the sum of array elements over a given x
+
+```python
+import numpy
+array = numpy.array([ [1, 2], [10, 11] ])
+print(numpy.sum(array, axis=0)) #[11 13]
+print(numpy.sum(array, axis=1)) # [ 3 21]
+print(numpy.sum(array)) # 24
+```
+
+
+
+## Sum 
+
+The prod tool returns the prod of array elements over a given x
+
+```python
+import numpy
+array = numpy.array([ [1, 2], [10, 11] ])
+print(numpy.prod(array, axis=0)) #[10 22]
+print(numpy.prod(array, axis=1)) #[2 110]
+print(numpy.prod(array)) # 220
+```
+
+## Min
+
+The min function is going to retrieve the minimum value in a given axis
+
+
+```python
+import numpy
+array = numpy.array([ [1, 2], [10, 11] ])
+print(numpy.min(array, axis=0)) #[1 2]
+print(numpy.min(array, axis=1)) #[1 10]
+print(numpy.min(array)) # 1
+```
+
+
+## Max
+
+The max function is going to retrieve the maximum value in a given axis
+
+
+```python
+import numpy
+array = numpy.array([ [1, 2], [10, 11] ])
+print(numpy.max(array, axis=0)) #[10 11]
+print(numpy.max(array, axis=1)) #[2 11]
+print(numpy.max(array)) # 11
+```
+
+## Others
+
+Numpy has a lot more function that we can use, I will list some functions that we are not going to cover
+
+- mean
+- var
+- std
+- shape
+- reshape
