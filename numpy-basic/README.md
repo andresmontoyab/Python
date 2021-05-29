@@ -154,7 +154,7 @@ print(numpy.sum(array, axis=1)) # [ 3 21]
 print(numpy.sum(array)) # 24
 ```
 
-
+cheking git
 
 ## Sum 
 
